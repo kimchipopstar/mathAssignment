@@ -8,26 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import "AdditionQuestion.h"
+#import "InputHandler.h"
+#import "ScoreKeeper.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        
         BOOL play = YES;
+        ScoreKeeper *scoreGive = [[ScoreKeeper alloc]init];
+        
         while (play) {
             
             AdditionQuestion *questionInstant = [[AdditionQuestion alloc]init];
             NSLog(@"%@",questionInstant.question);
             
-            char inputChars[255];
-            
-            fgets(inputChars, 255, stdin);
-            
-            NSString *objString = [NSString stringWithCString:inputChars encoding:NSUTF8StringEncoding];
-            
-            
-            NSString *parseInput = [objString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            
+            InputHandler *giveMeInput = [[InputHandler alloc]init];
+            NSString *parseInput = [giveMeInput handleIt];
             
             NSInteger strToInt = [parseInput intValue];
+            
             
             if ([parseInput  isEqualToString: @"quit"]) {
                 play = NO;
@@ -36,10 +35,14 @@ int main(int argc, const char * argv[]) {
             
             if (strToInt == questionInstant.answer) {
                 NSLog(@"RIght!");
+                scoreGive.right ++;
+                
             } else {
                 NSLog(@"Wrong!");
+                scoreGive.wrong ++;
             }
             
+            [scoreGive score];
             
 
             

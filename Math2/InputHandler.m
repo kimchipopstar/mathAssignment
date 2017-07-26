@@ -10,7 +10,7 @@
 
 @implementation InputHandler
 
-+(NSString*)handleIt{
+-(NSString*)handleIt{
     
     char inputChars[255];
     
