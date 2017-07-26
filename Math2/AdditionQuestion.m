@@ -19,8 +19,23 @@
         
         _answer = numOne + numTwo;
         _question = [NSString stringWithFormat:@"%li + %li = ?", numOne, numTwo];
+        _startTime = [NSDate date];
     }
     return self;
+}
+
+- (NSInteger)answer{
+    _endTime = [NSDate date];
+    return _answer;
+}
+
+-(NSTimeInterval) answerTime{
+    
+    NSTimeInterval howLong = [_endTime timeIntervalSinceDate:_startTime];
+    
+    return howLong;
+    
+    
 }
 
 @end

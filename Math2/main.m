@@ -10,18 +10,21 @@
 #import "AdditionQuestion.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
+#import "QuestionManager.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         BOOL play = YES;
         ScoreKeeper *scoreGive = [[ScoreKeeper alloc]init];
+        QuestionManager *questionManager = [[QuestionManager alloc]init];
         
         while (play) {
             
-            AdditionQuestion *questionInstant = [[AdditionQuestion alloc]init];
-            NSLog(@"%@",questionInstant.question);
             
+            AdditionQuestion *additionQuestion = [[AdditionQuestion alloc]init];
+            [[questionManager question] addObject:additionQuestion];
+            NSLog(@"%@",additionQuestion.question);
             InputHandler *giveMeInput = [[InputHandler alloc]init];
             NSString *parseInput = [giveMeInput handleIt];
             
@@ -33,7 +36,7 @@ int main(int argc, const char * argv[]) {
                 continue;
             }
             
-            if (strToInt == questionInstant.answer) {
+            if (strToInt == additionQuestion.answer) {
                 NSLog(@"RIght!");
                 scoreGive.right ++;
                 
@@ -44,6 +47,19 @@ int main(int argc, const char * argv[]) {
             
             [scoreGive score];
             
+            NSTimeInterval time = [additionQuestion answerTime];
+            questionManager.total += time;
+            NSString *showTimes = [questionManager timeOutput];
+            NSLog(@"%@",showTimes);
+            
+            
+            
+            
+            
+            
+            
+            
+            
 
             
         }
@@ -51,5 +67,3 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-//NSCharacterSet *mycharSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-//NSString *noNewLine = [inputString stringByTrimmingCharactersInSet:mycharSet];
