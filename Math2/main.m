@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AdditionQuestion.h"
+#import "Question.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
 #import "QuestionManager.h"
@@ -22,9 +22,9 @@ int main(int argc, const char * argv[]) {
         while (play) {
             
             
-            AdditionQuestion *additionQuestion = [[AdditionQuestion alloc]init];
-            [[questionManager question] addObject:additionQuestion];
-            NSLog(@"%@",additionQuestion.question);
+            Question *question = [[Question alloc]init];
+            [[questionManager question] addObject:question];
+            NSLog(@"%@",question.question);
             InputHandler *giveMeInput = [[InputHandler alloc]init];
             NSString *parseInput = [giveMeInput handleIt];
             
@@ -36,7 +36,7 @@ int main(int argc, const char * argv[]) {
                 continue;
             }
             
-            if (strToInt == additionQuestion.answer) {
+            if (strToInt == question.answer) {
                 NSLog(@"RIght!");
                 scoreGive.right ++;
                 
@@ -47,7 +47,7 @@ int main(int argc, const char * argv[]) {
             
             [scoreGive score];
             
-            NSTimeInterval time = [additionQuestion answerTime];
+            NSTimeInterval time = [question answerTime];
             questionManager.total += time;
             NSString *showTimes = [questionManager timeOutput];
             NSLog(@"%@",showTimes);

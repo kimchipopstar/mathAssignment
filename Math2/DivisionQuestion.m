@@ -1,14 +1,14 @@
 //
-//  AdditionQuestion.m
+//  DivisionQuestion.m
 //  Math2
 //
 //  Created by Jaewon Kim on 2017-07-26.
 //  Copyright © 2017 Jaewon Kim. All rights reserved.
 //
 
-#import "AdditionQuestion.h"
+#import "DivisionQuestion.h"
 
-@implementation AdditionQuestion
+@implementation DivisionQuestion
 
 - (instancetype)init
 {
@@ -21,8 +21,8 @@
 
 - (void)generateQuestion {
     
-    self.answer = self.leftValue + self.rightValue;
-    self.question = [NSString stringWithFormat:@"%li + %li = ?", self.leftValue, self.rightValue];
+    self.answer = self.leftValue / self.rightValue;
+    self.question = [NSString stringWithFormat:@"%li / %li = ?", self.leftValue, self.rightValue];
 }
 
 @end

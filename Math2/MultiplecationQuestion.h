@@ -1,5 +1,5 @@
 //
-//  AdditionQuestion.h
+//  MultiplecationQuestion.h
 //  Math2
 //
 //  Created by Jaewon Kim on 2017-07-26.
@@ -8,6 +8,6 @@
 
 #import "Question.h"
 
-@interface AdditionQuestion : Question
+@interface MultiplecationQuestion : Question
 
 @end
