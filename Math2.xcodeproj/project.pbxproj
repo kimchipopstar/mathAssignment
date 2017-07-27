@@ -16,6 +16,7 @@
 		4D83A6EF1F295B1B0086F1CC /* SubtractionQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D83A6EE1F295B1B0086F1CC /* SubtractionQuestion.m */; };
 		4D83A6F21F295B440086F1CC /* MultiplecationQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D83A6F11F295B440086F1CC /* MultiplecationQuestion.m */; };
 		4D83A6F51F295B5A0086F1CC /* DivisionQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D83A6F41F295B5A0086F1CC /* DivisionQuestion.m */; };
+		4D83A6F81F2965560086F1CC /* QuestionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D83A6F71F2965560086F1CC /* QuestionFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,8 @@
 		4D83A6F11F295B440086F1CC /* MultiplecationQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplecationQuestion.m; sourceTree = "<group>"; };
 		4D83A6F31F295B5A0086F1CC /* DivisionQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DivisionQuestion.h; sourceTree = "<group>"; };
 		4D83A6F41F295B5A0086F1CC /* DivisionQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DivisionQuestion.m; sourceTree = "<group>"; };
+		4D83A6F61F2965560086F1CC /* QuestionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionFactory.h; sourceTree = "<group>"; };
+		4D83A6F71F2965560086F1CC /* QuestionFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 				4D83A6F11F295B440086F1CC /* MultiplecationQuestion.m */,
 				4D83A6F31F295B5A0086F1CC /* DivisionQuestion.h */,
 				4D83A6F41F295B5A0086F1CC /* DivisionQuestion.m */,
+				4D83A6F61F2965560086F1CC /* QuestionFactory.h */,
+				4D83A6F71F2965560086F1CC /* QuestionFactory.m */,
 			);
 			path = Math2;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				4D83A6F21F295B440086F1CC /* MultiplecationQuestion.m in Sources */,
 				4D83A6F51F295B5A0086F1CC /* DivisionQuestion.m in Sources */,
 				4D83A6B71F281F050086F1CC /* main.m in Sources */,
+				4D83A6F81F2965560086F1CC /* QuestionFactory.m in Sources */,
 				4D83A6C21F28301A0086F1CC /* InputHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

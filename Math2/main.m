@@ -11,6 +11,7 @@
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
 #import "QuestionManager.h"
+#import "QuestionFactory.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -18,11 +19,12 @@ int main(int argc, const char * argv[]) {
         BOOL play = YES;
         ScoreKeeper *scoreGive = [[ScoreKeeper alloc]init];
         QuestionManager *questionManager = [[QuestionManager alloc]init];
+        QuestionFactory *questionFactory = [[QuestionFactory alloc]init];
         
         while (play) {
             
             
-            Question *question = [[Question alloc]init];
+            Question *question = [questionFactory generateRandomQuestion];
             [[questionManager question] addObject:question];
             NSLog(@"%@",question.question);
             InputHandler *giveMeInput = [[InputHandler alloc]init];
